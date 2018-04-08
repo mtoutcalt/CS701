@@ -1,3 +1,32 @@
-<p>
+<!-- <p>
   <img [src]="image">
-</p>
+</p> -->
+<div><br>
+  <h1>Welcome to the Magic: The Gathering Card Manager</h1><br>
+
+  <hr>
+  <h3>Explore different Cards</h3>
+  <form>
+    <input type="text" #searchText placeholder="Search by Card name..." />
+
+    <button class="btn btn-primary"
+        (click)="search(searchText.value)">
+    Search
+    </button>
+  </form>
+  <br>
+
+  <table class="table table-dark">
+    <tr>
+      <th>Name</th>
+      <th>Card<th>
+      <th>ID<td>
+    </tr>
+    <tr *ngFor="let card of cards">
+      <td>{{card.name}}</td>
+      <td><img src="{{card.imageUrl}}" /></td>
+      <td>{{card.id}}</td>
+    </tr>
+  </table>
+
+</div>
