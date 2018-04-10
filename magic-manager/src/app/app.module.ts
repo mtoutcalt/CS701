@@ -15,6 +15,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DeckBuilderColorsComponent } from './deck-builder-colors/deck-builder-colors.component';
 import { DeckBuilderCreaturesComponent } from './deck-builder-creatures/deck-builder-creatures.component';
 import { MagicTutorialComponent } from './magic-tutorial/magic-tutorial.component';
+import { MagicPhasesComponent } from './magic-phases/magic-phases.component';
 
 
 const appRoutes: Routes = [
@@ -26,6 +27,7 @@ const appRoutes: Routes = [
       ]},
   { path: 'magic', component: HomeComponent, data: {title: 'MAGIC!'} },
   { path: 'tutorial', component: MagicTutorialComponent },
+  { path: 'phases', component: MagicPhasesComponent },
   { path: '', redirectTo: '/magic', pathMatch: 'full'}
   // { path: '**', component: PageNotFoundComponent}
 ];
@@ -38,7 +40,8 @@ const appRoutes: Routes = [
     DeckBuilderComponent,
     DeckBuilderColorsComponent,
     DeckBuilderCreaturesComponent,
-    MagicTutorialComponent
+    MagicTutorialComponent,
+    MagicPhasesComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes, {enableTracing: true}),
