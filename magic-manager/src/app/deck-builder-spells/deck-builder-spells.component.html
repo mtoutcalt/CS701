@@ -1,5 +1,5 @@
 <div *ngIf="storedColor; else pickColor">
-  <h3>CREATURES!!!!</h3>
+  <h3>SPELLS!!!!</h3>
 
   <table class="table table-dark">
     <tr>
@@ -11,7 +11,7 @@
       <th>Set</th>
       <th>ID</th>
     </tr>
-    <tr *ngFor="let card of creatureCards">
+    <tr *ngFor="let card of spellCards">
       <td><button class="btn btn-primary" (click)="cardChosen(card)" >Add to Deck</button></td>
       <td>{{card.name}}</td>
       <td><img src="{{card.imageUrl}}" /></td>

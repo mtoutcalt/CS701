@@ -8,9 +8,20 @@ import 'rxjs/add/operator/map';
 export class MagicCardService {
 
   cards: any;
+  card: any;
 
   constructor() {
     // cardService = Cards;
+  }
+
+  findCardById(id: string) : Promise<any> {
+      return Cards.find(id)
+        .then( result =>
+          {
+            console.log(result);
+            this.card = result;
+            return this.card;
+          });
   }
 
   findCards(searchTerm: string) : Promise<any> {
@@ -21,7 +32,27 @@ export class MagicCardService {
             this.cards = results;
             return this.cards;
           });
+  }
 
+  findCreatureCardsByColor(colorInput: string) : Promise<any> {
+      return Cards.where({colors: colorInput, types: 'Creature' })
+        .then( results =>
+          {
+            console.log(results);
+            this.cards = results;
+            return this.cards;
+          });
+  }
+
+  findSpellCardsByColor(colorInput: string) : Promise<any> {
+      return Cards.where({colors: colorInput, types: 'Sorcery' })
+        .then( results =>
+          {
+            //TODO subscribe
+            console.log(results);
+            this.cards = results;
+            return this.cards;
+          });
   }
 
 }

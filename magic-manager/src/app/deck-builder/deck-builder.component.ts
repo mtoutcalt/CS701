@@ -8,11 +8,8 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 })
 export class DeckBuilderComponent implements OnInit {
 
-   isLinear = true;
    firstFormGroup: FormGroup;
    secondFormGroup: FormGroup;
-   red:string;
-   blue:string;
 
   constructor(private _formBuilder: FormBuilder) { }
 

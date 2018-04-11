@@ -7,6 +7,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatCardModule } from '@angular/material/card';
 
+import { DeckBuilderService } from './model/deck-builder.service';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { UserFormComponent } from './user-form/user-form.component';
@@ -16,6 +18,8 @@ import { DeckBuilderColorsComponent } from './deck-builder-colors/deck-builder-c
 import { DeckBuilderCreaturesComponent } from './deck-builder-creatures/deck-builder-creatures.component';
 import { MagicTutorialComponent } from './magic-tutorial/magic-tutorial.component';
 import { MagicPhasesComponent } from './magic-phases/magic-phases.component';
+import { DeckBuilderSpellsComponent } from './deck-builder-spells/deck-builder-spells.component';
+import { DeckBuilderCurrentComponent } from './deck-builder-current/deck-builder-current.component';
 
 
 const appRoutes: Routes = [
@@ -23,7 +27,9 @@ const appRoutes: Routes = [
   { path: 'deckbuilder', component: DeckBuilderComponent,
       children: [
         { path: '', component: DeckBuilderColorsComponent},
-        { path: 'creatures', component: DeckBuilderCreaturesComponent}
+        { path: 'creatures', component: DeckBuilderCreaturesComponent},
+        { path: 'spells', component: DeckBuilderSpellsComponent},
+        { path: 'currentDeck', component: DeckBuilderCurrentComponent}
       ]},
   { path: 'magic', component: HomeComponent, data: {title: 'MAGIC!'} },
   { path: 'tutorial', component: MagicTutorialComponent },
@@ -41,7 +47,9 @@ const appRoutes: Routes = [
     DeckBuilderColorsComponent,
     DeckBuilderCreaturesComponent,
     MagicTutorialComponent,
-    MagicPhasesComponent
+    MagicPhasesComponent,
+    DeckBuilderSpellsComponent,
+    DeckBuilderCurrentComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes, {enableTracing: true}),
@@ -57,7 +65,7 @@ const appRoutes: Routes = [
     MatStepperModule,
     MatCardModule
   ],
-  providers: [],
+  providers: [DeckBuilderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
