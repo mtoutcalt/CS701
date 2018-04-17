@@ -7,9 +7,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MagicTutorialComponent implements OnInit {
 
+  video: HTMLVideoElement;
+  status: any;
+
   constructor() { }
 
   ngOnInit() {
+    this.video = <HTMLVideoElement> document.getElementById("localvideo");
+    this.status = document.getElementById("status");
   }
+
+  play() {
+     if (this.video.paused) {
+       this.video.play();
+       this.status.innerHTML = "Playing " + this.video.currentSrc;
+     }
+  }
+
+
+  pause() {
+     this.video.pause();
+     this.status.innerHTML = "Paused " + this.video.currentSrc;
+  }
+
+
+
 
 }

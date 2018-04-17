@@ -22,7 +22,7 @@ export class DeckBuilderCurrentComponent implements OnInit {
     if (localCreaturesIds) {
       this.creatureCards = [];
       for (let i = 0; i < localCreaturesIds.length; i++) {
-        this.card = this.magicCardService.findCardById(localCreaturesIds[i]).then(result => this.creatureCards.push(result)));
+        this.card = this.magicCardService.findCardById(localCreaturesIds[i]).then(result => this.creatureCards.push(result));
       }
     }
 
@@ -31,7 +31,7 @@ export class DeckBuilderCurrentComponent implements OnInit {
     if (localSpellIds) {
       this.spellCards = [];
       for (let i = 0; i < localSpellIds.length; i++) {
-        this.card = this.magicCardService.findCardById(localSpellIds[i]).then(result => this.spellCards.push(result)));
+        this.card = this.magicCardService.findCardById(localSpellIds[i]).then(result => this.spellCards.push(result));
       }
     }
   }

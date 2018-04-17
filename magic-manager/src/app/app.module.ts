@@ -6,6 +6,7 @@ import { MatInputModule, MatButtonModule, MatFormFieldModule, MatCheckboxModule 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatCardModule } from '@angular/material/card';
+import {MatTabsModule} from '@angular/material/tabs';
 
 import { DeckBuilderService } from './model/deck-builder.service';
 
@@ -20,6 +21,8 @@ import { MagicTutorialComponent } from './magic-tutorial/magic-tutorial.componen
 import { MagicPhasesComponent } from './magic-phases/magic-phases.component';
 import { DeckBuilderSpellsComponent } from './deck-builder-spells/deck-builder-spells.component';
 import { DeckBuilderCurrentComponent } from './deck-builder-current/deck-builder-current.component';
+import { FindstoreComponent } from './findstore/findstore.component';
+import { MagicFormatsComponent } from './magic-formats/magic-formats.component';
 
 
 const appRoutes: Routes = [
@@ -34,6 +37,8 @@ const appRoutes: Routes = [
   { path: 'magic', component: HomeComponent, data: {title: 'MAGIC!'} },
   { path: 'tutorial', component: MagicTutorialComponent },
   { path: 'phases', component: MagicPhasesComponent },
+  { path: 'formats', component: MagicFormatsComponent },
+  { path: 'findstore', component: FindstoreComponent },
   { path: '', redirectTo: '/magic', pathMatch: 'full'}
   // { path: '**', component: PageNotFoundComponent}
 ];
@@ -49,7 +54,9 @@ const appRoutes: Routes = [
     MagicTutorialComponent,
     MagicPhasesComponent,
     DeckBuilderSpellsComponent,
-    DeckBuilderCurrentComponent
+    DeckBuilderCurrentComponent,
+    FindstoreComponent,
+    MagicFormatsComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes, {enableTracing: true}),
@@ -63,7 +70,8 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatToolbarModule,
     MatStepperModule,
-    MatCardModule
+    MatCardModule,
+    MatTabsModule
   ],
   providers: [DeckBuilderService],
   bootstrap: [AppComponent]

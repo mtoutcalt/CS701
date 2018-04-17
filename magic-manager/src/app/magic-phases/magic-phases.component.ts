@@ -14,6 +14,9 @@ export class MagicPhasesComponent implements OnInit {
 
   ngOnInit() {
 
+      var audioplayer = <HTMLAudioElement> document.getElementById('audioplayer');
+      audioplayer.volume = 0.1;
+
       let context: CanvasRenderingContext2D = this.canvasRef.nativeElement.getContext('2d');
       var idTimer1, idTimer2, idTimer3, idTimer4, idTimer5;
 
