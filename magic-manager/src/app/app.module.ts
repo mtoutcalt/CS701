@@ -7,8 +7,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatCardModule } from '@angular/material/card';
 import {MatTabsModule} from '@angular/material/tabs';
+import { HttpClientModule, HttpClient, HttpHandler, HttpClientJsonpModule } from '@angular/common/http';
 
 import { DeckBuilderService } from './model/deck-builder.service';
+import { FindStoreService } from './model/find-store.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -71,9 +73,11 @@ const appRoutes: Routes = [
     MatToolbarModule,
     MatStepperModule,
     MatCardModule,
-    MatTabsModule
+    MatTabsModule,
+    HttpClientModule,
+    HttpClientJsonpModule
   ],
-  providers: [DeckBuilderService],
+  providers: [DeckBuilderService, FindStoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
