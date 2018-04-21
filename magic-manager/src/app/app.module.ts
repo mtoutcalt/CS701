@@ -6,7 +6,7 @@ import { MatInputModule, MatButtonModule, MatFormFieldModule, MatCheckboxModule 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatCardModule } from '@angular/material/card';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatTabsModule } from '@angular/material/tabs';
 import { HttpClientModule, HttpClient, HttpHandler, HttpClientJsonpModule } from '@angular/common/http';
 
 import { DeckBuilderService } from './model/deck-builder.service';
@@ -14,7 +14,7 @@ import { FindStoreService } from './model/find-store.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { UserFormComponent } from './user-form/user-form.component';
+import { DeckFormComponent } from './deck-form/deck-form.component';
 import { DeckBuilderComponent } from './deck-builder/deck-builder.component';
 import { RouterModule, Routes } from '@angular/router';
 import { DeckBuilderColorsComponent } from './deck-builder-colors/deck-builder-colors.component';
@@ -25,19 +25,21 @@ import { DeckBuilderSpellsComponent } from './deck-builder-spells/deck-builder-s
 import { DeckBuilderCurrentComponent } from './deck-builder-current/deck-builder-current.component';
 import { FindstoreComponent } from './findstore/findstore.component';
 import { MagicFormatsComponent } from './magic-formats/magic-formats.component';
+import { BoosterPackComponent } from './booster-pack/booster-pack.component';
 
 
 const appRoutes: Routes = [
-  { path: 'userform', component: UserFormComponent},
   { path: 'deckbuilder', component: DeckBuilderComponent,
       children: [
-        { path: '', component: DeckBuilderColorsComponent},
+        { path: '', component: DeckFormComponent},
+        { path: 'colors', component: DeckBuilderColorsComponent},
         { path: 'creatures', component: DeckBuilderCreaturesComponent},
         { path: 'spells', component: DeckBuilderSpellsComponent},
-        { path: 'currentDeck', component: DeckBuilderCurrentComponent}
+        { path: 'currentDeck', component: DeckBuilderCurrentComponent},
       ]},
   { path: 'magic', component: HomeComponent, data: {title: 'MAGIC!'} },
   { path: 'tutorial', component: MagicTutorialComponent },
+  { path: 'booster', component: BoosterPackComponent },
   { path: 'phases', component: MagicPhasesComponent },
   { path: 'formats', component: MagicFormatsComponent },
   { path: 'findstore', component: FindstoreComponent },
@@ -49,7 +51,7 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    UserFormComponent,
+    DeckFormComponent,
     DeckBuilderComponent,
     DeckBuilderColorsComponent,
     DeckBuilderCreaturesComponent,
@@ -58,7 +60,8 @@ const appRoutes: Routes = [
     DeckBuilderSpellsComponent,
     DeckBuilderCurrentComponent,
     FindstoreComponent,
-    MagicFormatsComponent
+    MagicFormatsComponent,
+    BoosterPackComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes, {enableTracing: true}),

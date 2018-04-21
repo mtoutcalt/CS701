@@ -17,33 +17,58 @@ export class DeckBuilderColorsComponent implements OnInit {
 
     document.getElementById('whiteChosen').addEventListener('click',
       function (event) {
-        alert("WHITE");
         localStorage.setItem('color', "white");
+
+        var x = document.getElementById("snackbar");
+        // Add the "show" class to DIV
+        x.className = "show";
+        // After 3 seconds, remove the show class from DIV
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
       }
   );
 
     document.getElementById('blueChosen').addEventListener('click',
       function (event) {
-        alert("BLUE");
         localStorage.setItem('color', "blue");
+
+        var x = document.getElementById("snackbar");
+        // Add the "show" class to DIV
+        x.className = "show";
+        // After 3 seconds, remove the show class from DIV
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
     });
 
     document.getElementById('greenChosen').addEventListener('click',
       function (event) {
-        alert("GREEN");
         localStorage.setItem('color', "green");
+
+        var x = document.getElementById("snackbar");
+        // Add the "show" class to DIV
+        x.className = "show";
+        // After 3 seconds, remove the show class from DIV
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
     });
 
     document.getElementById('redChosen').addEventListener('click',
       function (event) {
-        alert("RED");
         localStorage.setItem('color', "red");
+
+        var x = document.getElementById("snackbar");
+        // Add the "show" class to DIV
+        x.className = "show";
+        // After 3 seconds, remove the show class from DIV
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
     });
 
     document.getElementById('blackChosen').addEventListener('click',
       function (event) {
-        alert("BLACK");
         localStorage.setItem('color', "black");
+
+        var x = document.getElementById("snackbar");
+        // Add the "show" class to DIV
+        x.className = "show";
+        // After 3 seconds, remove the show class from DIV
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
     });
 
   }

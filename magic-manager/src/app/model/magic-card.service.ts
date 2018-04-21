@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Cards, Card } from 'mtgsdk-ts';
+import { Cards, Card, Sets } from 'mtgsdk-ts';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -53,6 +53,21 @@ export class MagicCardService {
             this.cards = results;
             return this.cards;
           });
+  }
+
+  findSets(setID: string): Promise<Card[]> {
+    return Sets.generateBooster(setID)
+      .then(result => {
+	       for (const card of result) console.log(card.name);
+         return result;
+     });
+  }
+
+  findSetName(setID: string): Promise<string> {
+    return Sets.find(setID)
+      .then(result => {
+          return result.name;
+      });
   }
 
 }

@@ -6,14 +6,16 @@
 
   <hr>
   <h3>Explore different Cards</h3>
-  <form>
-    <input type="text" #searchText placeholder="Search by Card name..." />
+  <div class="form-inline">
+      <form>
+        <input class="form-control" type="text" #searchText placeholder="Search by Card name..." />
 
-    <button class="btn btn-primary"
-        (click)="search(searchText.value)">
-    Search
-    </button>
-  </form>
+        <button class="btn btn-primary"
+            (click)="search(searchText.value)">
+        Search
+        </button>
+      </form>
+  </div>
   <br>
 
   <table class="table table-dark">
