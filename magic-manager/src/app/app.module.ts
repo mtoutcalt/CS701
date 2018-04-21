@@ -31,11 +31,13 @@ import { BoosterPackComponent } from './booster-pack/booster-pack.component';
 const appRoutes: Routes = [
   { path: 'deckbuilder', component: DeckBuilderComponent,
       children: [
+        { path: 'formRenew', redirectTo: '/deckbuilder/form', pathMatch: 'full'},
         { path: '', component: DeckFormComponent},
         { path: 'colors', component: DeckBuilderColorsComponent},
         { path: 'creatures', component: DeckBuilderCreaturesComponent},
         { path: 'spells', component: DeckBuilderSpellsComponent},
-        { path: 'currentDeck', component: DeckBuilderCurrentComponent},
+        { path: 'currentDeckRenew', redirectTo: '/deckbuilder/currentDeck', pathMatch: 'full'},
+        { path: 'currentDeck', component: DeckBuilderCurrentComponent}
       ]},
   { path: 'magic', component: HomeComponent, data: {title: 'MAGIC!'} },
   { path: 'tutorial', component: MagicTutorialComponent },

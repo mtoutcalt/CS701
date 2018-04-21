@@ -1,6 +1,18 @@
 <div class="container">
-    <h3>Deck Creation Form</h3>
+  <h3>Deck Creation Form</h3>
 
+
+  <div *ngIf="localDeck; else deckFormTemplate">
+    <h3>Deck already created</h3>
+    <p>Deck Name: {{deckName}}</p>
+    <p>User Name: {{userName}}</p>
+    <p>First Name: {{firstName}}</p>
+    <p>Last Name: {{lastName}}</p>
+
+    <button class="btn btn-primary" (click)="resetDeck()"> Reset Deck </button>
+  </div>
+
+  <ng-template #deckFormTemplate>
     <form class="formwidth" (ngSubmit)="onSubmit()" >
 
       <table class="fullwidth" cellspacing="0">
@@ -33,4 +45,8 @@
         <button type="submit" mat-raised-button>Submit</button>
       </p>
     </form>
+  </ng-template>
+
+  <div id="snackbar">Added Card to Deck!</div>
+
 </div>
