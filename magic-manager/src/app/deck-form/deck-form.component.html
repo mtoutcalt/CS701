@@ -19,7 +19,7 @@
         <tr>
           <td>
             <mat-input-container class="fullwidth">
-              <input matInput placeholder="Username" id="username" [(ngModel)]="deck.username" name="username">
+              <input matInput autofocus="true" placeholder="Username" id="username" [(ngModel)]="deck.username" name="username">
             </mat-input-container>
           </td>
           <td>
@@ -37,7 +37,7 @@
 
       <p>
         <mat-input-container class="fullwidth">
-          <textarea matInput placeholder="deckName" id="deckName" [(ngModel)]="deck.deckName" name="deckName"></textarea>
+          <textarea spellcheck="true" matInput placeholder="deckName" id="deckName" [(ngModel)]="deck.deckName" name="deckName"></textarea>
         </mat-input-container>
       </p>
 
