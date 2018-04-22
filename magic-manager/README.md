@@ -42,15 +42,15 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-##Problem Statement -
+## Problem Statement -
 
 Magic: The Gathering is a strategy card game that involves a player creating a deck of cards, both creature cards and spell cards, and competing against their friend.  Magic has been around for decades and there are over 15,000 cards that have been created.  I wanted to expose an API that has card information so a user can search for cards, make their own deck of cards, and find resources for how to play the game.
 
-##Application Layout-
+## Application Layout-
 
 The application uses Angular routing, Bootstrap, and Angular Material Design for the layout and the look and feel.  The navigation is at the top and corresponds to each Angular component.  The Deck Builder component has a set of children navigation which corresponds to each step the user takes in building a deck of Magic cards.
 
-###Components/Pages
+### Components/Pages
 
 1) The Home Page has a Search feature so a User can look up cards in a Table. It uses the Card service to search by name.
 
@@ -66,15 +66,15 @@ The application uses Angular routing, Bootstrap, and Angular Material Design for
 
 7) The Find Where to Play page uses HTML5 geolocation and the Google Maps API to find the closest gaming or comic book store that sells Magic cards and gives driving directions to get there.  It initially finds the user’s location but also allows any city to be used.  The browser HTML5 geolocation coordinates are used on the page initialization and then chained into the Google Maps API call with lat and long to get the closest city.  Then it uses the Google Map Directions service to lookup the closest hobby store to that city that sells Magic and displays both the map and the list of directions of how to get there.
 
-##Integration of Project
+## Integration of Project
 
 I’m using Angular for the project and each Page in the navigation is its own component.  The Deck Builder Component then has a subset of children components.  I’m using the Angular router and children router to link everything together.  The navigation bar at the top is always present and uses Angular Material Design components for its style.  Other pages uses either Material Design or Bootstrap styling.
 
-##Code Organization
+## Code Organization
 
 The code is organized as a typical Angular app.  Each Page described above (1-7) is a stand-alone component.  The Deck Builder component has 5 child Components - deck-builder-colors, deck-builder-creatures, deck-builder-spells, deck-form, and deck-builder current.  The routing was kept in the app.module.ts file.  The model directory contains the Deck.ts data object used for the deck building form and it contains the services.  The find-store.service.ts makes a http get call to the google geocode api.  The magic-card.ts service.ts uses the mtgsdk-ts library and has 4 methods that takes in filter strings and returns Card Promises.  It also has 2 methods that take filters and return Set Promises.  
 
-##Services
+## Services
 
 Magic API:
 -https://docs.magicthegathering.io/
@@ -92,7 +92,7 @@ HTML5 Geolocation - https://www.w3schools.com/html/html5_geolocation.asp
 
 Data - I use the navigator.geolocation.currentPosition with a success callback that resolves my Promise.  It also gets options with highAccuracy as true and a timeout as 5 sec.  It returns a coordinate object which I then chain into the Google Maps call.
 
-##Course Topics Used
+## Course Topics Used
 
 SVG - for DeckBuilding I made an interactive graphic that displays the different colors used in a deck
 
