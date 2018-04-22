@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { DeckBuilderService } from '../model/deck-builder.service';
 
 @Component({
   selector: 'app-deck-builder-colors',
   templateUrl: './deck-builder-colors.component.html',
-  styleUrls: ['./deck-builder-colors.component.css'],
-  providers: [DeckBuilderService]
+  styleUrls: ['./deck-builder-colors.component.css']
 })
 export class DeckBuilderColorsComponent implements OnInit {
 
@@ -13,10 +11,10 @@ export class DeckBuilderColorsComponent implements OnInit {
   localColor: string;
   deckName: any;
 
-  constructor(private deckBuilderService: DeckBuilderService) { }
+  constructor() { }
 
   ngOnInit() {
-
+    //determines what to show based on if the deck has been initialized
     this.deckName = JSON.parse(localStorage.getItem('deck'));
     if (this.deckName)  {
       document.getElementById('colorWheel').style.display = 'block';
@@ -26,12 +24,14 @@ export class DeckBuilderColorsComponent implements OnInit {
       document.getElementById('noDeck').style.display = 'block';
     }
 
+    //these event listeners are duplicated for each color
     document.getElementById('whiteChosen').addEventListener('click',
       function (event) {
         localStorage.setItem('color', "white");
 
         document.getElementById('chosen').innerHTML = "<h5>WHITE Deck</h5>";
 
+        //sets up the css animation to make a Toast notification
         var x = document.getElementById("snackbar");
         // Add the "show" class to DIV
         x.className = "show";

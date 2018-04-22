@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MagicFormatsComponent implements OnInit {
 
+  //this component has less interactivity and mostly static content and matieral design syling
   constructor() { }
 
   ngOnInit() {

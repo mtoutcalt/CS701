@@ -10,6 +10,7 @@ import { MagicCardService } from '../model/magic-card.service';
 })
 export class BoosterPackComponent implements OnInit {
 
+  //IDs of different Magic sets from the API
   setIds = ['UST', 'UNH', 'UGL', 'PTK', 'POR', 'PCA', 'HOP', 'VMA', 'IMA', 'MPS', 'DDS', 'DDT', 'DDL', 'CMA', 'ARC',
             'WWK', 'CED', 'VAN', 'VIS', 'TSB', 'TPR', 'TOR', 'SHM', 'RTR', 'PLC', 'ORI', 'LEG', 'JUD', 'ICE', 'KTK',
             'LEA', 'HOU', 'FEM', 'EXO', 'EVE', 'DST', 'DGM', 'CST', 'BRB', 'CON', 'ATQ', 'APC', 'ALA', '9ED', 'AKH'];
@@ -22,13 +23,13 @@ export class BoosterPackComponent implements OnInit {
   ngOnInit() { }
 
  openBooster() {
-   let randomNum = Math.floor(Math.random() * Math.floor(this.setIds.length - 1));
+   let randomNum = Math.floor(Math.random() * Math.floor(this.setIds.length - 1)); //get random array index
    let randomSet = this.setIds[randomNum];
    console.log(randomSet);
 
    this.magicCardService.findSets(randomSet).then(result => {
      this.booster = result;
-     this.magicCardService.findSetName(randomSet).then(result => this.setName = result);
+     this.magicCardService.findSetName(randomSet).then(result => this.setName = result);  //get Cards for booster
    });
  }
 

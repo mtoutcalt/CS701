@@ -9,7 +9,6 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
 import { HttpClientModule, HttpClient, HttpHandler, HttpClientJsonpModule } from '@angular/common/http';
 
-import { DeckBuilderService } from './model/deck-builder.service';
 import { FindStoreService } from './model/find-store.service';
 
 import { AppComponent } from './app.component';
@@ -82,7 +81,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     HttpClientJsonpModule
   ],
-  providers: [DeckBuilderService, FindStoreService],
+  providers: [FindStoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

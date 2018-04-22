@@ -1,3 +1,4 @@
+// model class used for the deckbuilding form
 export class Deck {
   constructor(
     public username?: string,

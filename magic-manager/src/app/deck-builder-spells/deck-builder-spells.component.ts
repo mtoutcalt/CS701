@@ -27,6 +27,7 @@ export class DeckBuilderSpellsComponent implements OnInit {
 
   }
 
+  //use localStorage and add the new card to it
   cardChosen(card: any) {
     let spellDeck: Array<string>;
     let localSpells = JSON.parse(localStorage.getItem('spellDeck'));

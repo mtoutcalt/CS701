@@ -17,6 +17,7 @@ export class MagicTutorialComponent implements OnInit {
     this.status = document.getElementById("status");
   }
 
+  //show the video src is playing with mouseover
   play() {
      if (this.video.paused) {
        this.video.play();

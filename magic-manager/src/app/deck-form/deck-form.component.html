@@ -1,7 +1,7 @@
 <div class="container">
   <h3>Deck Creation Form</h3>
 
-
+  <!-- if deck is already there then display its data -->
   <div *ngIf="localDeck; else deckFormTemplate">
     <h3>Deck already created</h3>
     <p>Deck Name: {{deckName}}</p>
@@ -9,7 +9,7 @@
     <p>First Name: {{firstName}}</p>
     <p>Last Name: {{lastName}}</p>
 
-    <button class="btn btn-primary" (click)="resetDeck()"> Reset Deck </button>
+    <button class="btn btn-dark" (click)="resetDeck()"> Reset Deck </button>
   </div>
 
   <ng-template #deckFormTemplate>
@@ -19,6 +19,7 @@
         <tr>
           <td>
             <mat-input-container class="fullwidth">
+              <!--using autofocus which is a cool html5 attribute  -->
               <input matInput autofocus="true" placeholder="Username" id="username" [(ngModel)]="deck.username" name="username">
             </mat-input-container>
           </td>
@@ -36,6 +37,7 @@
       </table>
 
       <p>
+        <!--using spellcheck which is a cool html5 attribute  -->
         <mat-input-container class="fullwidth">
           <textarea spellcheck="true" matInput placeholder="deckName" id="deckName" [(ngModel)]="deck.deckName" name="deckName"></textarea>
         </mat-input-container>

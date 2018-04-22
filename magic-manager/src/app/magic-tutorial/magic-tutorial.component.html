@@ -1,9 +1,11 @@
 <div class="container">
   <br><br>
 
+  <!-- The other videos are embedded but I wanted a local video to try out the html5 controls -->
+  <!-- It will play when mouseover and it will display the file name and when its paused or playing on the page -->
   <h4>Never Played Before? Learn How to Play Here</h4>
   <video  (mouseover)="play()" (mouseout)="pause()" id="localvideo" width="800" controls poster="../assets/how-to-play-magic.jpg"> <!-- poster image from http://www.themagicrain.com/2017/06/magic-the-gathering-let-there-be-war/ -->
-    <source src="../assets/howtoplay.mp4" type="video/mp4">
+    <source src="../assets/howtoplay.mp4" type="video/mp4">  <!--video owned by wizards of the coast llc - https://www.youtube.com/watch?v=RZyXU1L3JXk&t=2s  -->
     Your browser does not support HTML5 video.
   </video>
   <div id="status"></div>

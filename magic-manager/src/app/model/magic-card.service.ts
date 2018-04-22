@@ -6,12 +6,13 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class MagicCardService {
+//this service uses the Cards and Sets methods which actually do the http calls
+//it's abstracted but I'm still using different search terms and returning Promises
 
   cards: any;
   card: any;
 
   constructor() {
-    // cardService = Cards;
   }
 
   findCardById(id: string) : Promise<any> {

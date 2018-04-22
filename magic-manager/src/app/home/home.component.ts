@@ -19,8 +19,7 @@ export class HomeComponent implements OnInit {
   constructor(private magicCardService: MagicCardService) { }
 
   ngOnInit() {
-    // Cards.find("08618f8d5ebdc0c4d381ad11f0563dfebb21f4ee").then(result => this.image = result.imageUrl);
-    this.cards = this.magicCardService.findCards("Guttural").then(result => this.cards = result);
+    this.cards = this.magicCardService.findCards("Guttural").then(result => this.cards = result); //default search - I chose something random
   }
 
   search(term: string) {

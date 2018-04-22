@@ -20,7 +20,7 @@ export class DeckBuilderCurrentComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
-
+    //this function uses localStorage to retrieve the color, creatures, and spell cards
     let color = localStorage.getItem("color");
     console.log(color);
     if (color) {
@@ -52,8 +52,7 @@ export class DeckBuilderCurrentComponent implements OnInit {
     let revisedCreatures = [];
     localCreatures.forEach( creature => {
       if (card.id == creature) {
-        // console.log('gotit');
-        // console.log(card.id);
+        //if the deleted card matches then keep it out of the new array
       } else {
         revisedCreatures.push(creature);
       }
@@ -67,7 +66,7 @@ export class DeckBuilderCurrentComponent implements OnInit {
     // After 3 seconds, remove the show class from DIV
     setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 
-    window.location.replace("deckbuilder/currentDeckRenew");
+    window.location.replace("deckbuilder/currentDeckRenew");  //I forced a refresh so the card will not still display
   }
 
   spellCardDeletion(card: any) {

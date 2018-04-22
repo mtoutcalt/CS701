@@ -12,6 +12,8 @@ export class MagicPhasesComponent implements OnInit {
 
   constructor() { }
 
+  //this component has the most code - it has an audio player and buttons to help navigate different canvas drawings
+  //the canvas drawings show how to play the game
   ngOnInit() {
 
       var audioplayer = <HTMLAudioElement> document.getElementById('audioplayer');
@@ -48,7 +50,7 @@ export class MagicPhasesComponent implements OnInit {
     	var playBut = <HTMLInputElement> document.getElementById('play');
     	var stopBut = <HTMLInputElement> document.getElementById('stop');
 
-    //event handlers
+    //event handlers - each button corresponds to a different canvas drawing for each phase of the game
     	step1But.addEventListener('click', function(e) {
     		drawPhase1();
     		step1But.className = "btn btn-primary";
@@ -107,6 +109,9 @@ export class MagicPhasesComponent implements OnInit {
     		stopPlaying();
     	});
 
+      //these phases follow the same process
+      //clear the canvas, draw the images that are in every drawing, save the context, then draw the shapes and text
+      //then restore after drawing
       function drawPhase1() {
     		clearCanvas();
     		drawUnchangedImages();
@@ -414,6 +419,7 @@ export class MagicPhasesComponent implements OnInit {
   		context.fillText("Opponent Life: 20", 50, 50); //x,y
   	}
 
+    //this will disable the buttons and use the timer to go through each drawing
   	function playSteps() {
   		step1But.disabled = true;
   		step2But.disabled = true;
@@ -428,6 +434,7 @@ export class MagicPhasesComponent implements OnInit {
   		window.setTimeout(stopPlaying, 15000);
   	}
 
+    //clear the timers and re-enable the buttons
   	function stopPlaying() {
   		window.clearTimeout(idTimer1);
   		window.clearTimeout(idTimer2);
